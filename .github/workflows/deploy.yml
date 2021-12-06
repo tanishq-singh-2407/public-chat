@@ -23,7 +23,7 @@ jobs:
         run: npm install
 
       - name: Building Function
-        run: npx ncc build index.js -m -s 
+        run: npx ncc build index.ts -m -s
 
   deploy:
     name: 'Deploy, aws lambda' 
