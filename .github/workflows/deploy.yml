@@ -23,7 +23,7 @@ jobs:
         run: npm install
 
       - name: Building Function
-        run: npx ncc build index.ts -m -s
+        run: npx ncc build index.ts
 
   deploy:
     name: 'Deploy, aws lambda' 
@@ -50,4 +50,4 @@ jobs:
         run: zip -j deploy.zip ./dist/*
 
       - name: Deploying
-        run: aws lambda update-function-code --function-name=${{ secrets.lambda_function_name }} --zip-file=file://deploy.zip
+        run: aws lambda update-function-code --function-name=${{ secrets.lambda_function_name }} --zip-file=fileb://deploy.zip
