@@ -19,12 +19,11 @@ jobs:
         with:
           node-version: '14.x'
 
-      - name: npm install, build
-        env:
-            CI: true
-        run: |
-          npm ci
-          npx ncc build index.js -m -s
+      - name: Installing packages
+        run: npm install
+
+      - name: Building Function
+        run: npx ncc build index.js -m -s 
 
   deploy:
     name: 'Deploy, aws lambda' 
