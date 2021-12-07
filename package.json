@@ -1,31 +1,19 @@
 {
-  "name": "nextjs-lambda",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "name": "app",
+  "private": true,
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/tanishq-singh-2301/nextjs-lambda.git"
-  },
-  "keywords": [],
-  "author": "Tanishq",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/tanishq-singh-2301/nextjs-lambda/issues"
-  },
-  "homepage": "https://github.com/tanishq-singh-2301/nextjs-lambda#readme",
-  "devDependencies": {
-    "@types/aws-lambda": "^8.10.86",
-    "@types/lodash": "^4.14.177",
-    "@types/node": "^16.11.11",
-    "@vercel/ncc": "^0.33.0",
-    "typescript": "^4.5.2"
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
   },
   "dependencies": {
-    "aws-lambda": "^1.0.7",
-    "lodash": "^4.17.21"
+    "next": "12.0.7",
+    "react": "17.0.2",
+    "react-dom": "17.0.2"
+  },
+  "devDependencies": {
+    "eslint": "8.4.1",
+    "eslint-config-next": "12.0.7"
   }
 }
