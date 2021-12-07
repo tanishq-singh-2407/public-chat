@@ -5,12 +5,12 @@ on:
     branches:
     - master
 
-variables:
-  FUNCTIONS: test-fun-1 test-fun-2
 
 jobs:
 
   Installing_Packages:
+    variables:
+      FUNCTIONS: test-fun-1 test-fun-2
     name: 'Installing Packages'
     runs-on: ubuntu-latest
     environment: production
