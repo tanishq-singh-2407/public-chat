@@ -28,7 +28,7 @@ jobs:
 
       - name: "Installing, Building, and Deploying Function"
         run: |
-          cd lambda
+          cd lambdas
           pwd
           for fun in test-fun-1 test-fun-2 ; do
             echo ${fun}
