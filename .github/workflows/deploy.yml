@@ -7,11 +7,8 @@ on:
 
 
 jobs:
-
-  Installing_Packages:
-    variables:
-      FUNCTIONS: test-fun-1 test-fun-2
-    name: 'Installing Packages'
+  Deploy:
+    name: 'Installing, Building, and Deploying Function'
     runs-on: ubuntu-latest
     environment: production
 
@@ -27,13 +24,19 @@ jobs:
         run: |
           cd lambda
           pwd
-          for fun in ${FUNCTIONS} ; do
+          for fun in test-fun-1 test-fun-2 ; do
             echo ${fun}
             cd ${fun}
             
             if [[ -f "package.json" ]]; then
               echo "Installing packages"
               npm i
+              
+              if [[ -f "index.ts" ]]; then
+                npx ncc build index.ts
+
+                dir
+              fi
             fi
 
             cd ..
