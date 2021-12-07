@@ -27,5 +27,5 @@ jobs:
             echo ${fun}
             cd ${fun}
             dir
-            cd ../
+            cd ..
           done
