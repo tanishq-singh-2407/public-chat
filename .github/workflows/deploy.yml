@@ -21,7 +21,11 @@ jobs:
 
       - name: Installing packages
         run: |
+          cd lambda
           pwd
-          for i in [1, 2, 3, 4] ; do
-            echo i
+          for fun in test-fun-1 test-fun-2 ; do
+            echo ${fun}
+            cd ${fun}
+            dir
+            cd ../
           done
