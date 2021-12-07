@@ -22,5 +22,6 @@ jobs:
       - name: Installing packages
         run: |
           pwd
-          for i in [1, 2, 3, 4]; do
+          for i in [1, 2, 3, 4] ; do
             echo i
+          done
