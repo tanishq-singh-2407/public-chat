@@ -27,7 +27,7 @@ jobs:
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: ap-south-1
 
-      - name: Installing packages
+      - name: "Installing, Building, and Deploying Function"
         run: |
           cd lambda
           pwd
@@ -47,7 +47,12 @@ jobs:
                   echo "Creating Zip"
                   zip -j deploy.zip ./dist/*
 
-                  dir
+                  if [[ -d "deploy.zip" ]]; then
+                    echo "Deploying Lambda"
+                    aws lambda update-function-code --function-name=${fun} --zip-file=fileb://deploy.zip
+
+                    echo "${fun} Deployed."
+                  fi
                 fi
               fi
             fi
