@@ -1,17 +1,15 @@
-import type { NextPage } from 'next'
-import Head from 'next/head'
-import styles from '../styles/Home.module.css'
+import type { NextPage } from 'next';
+import Head from 'next/head';
+import styles from '../styles/Home.module.css';
 
 const Home: NextPage = () => {
   const randomNo = async () => {
-    fetch('')
+    await fetch(process.env.NEXT_PUBLIC_API_ENDPOINT as string)
       .then(t => t.json())
       .then(res => {
-        console.log(res);
+        var ele: HTMLElement | any = document.getElementById("random_no")
+        ele.innerText = JSON.parse(res.body).smt;
       })
-
-    console.log(process.env.API_ENDPOINT);
-
   };
 
   return (
@@ -24,7 +22,7 @@ const Home: NextPage = () => {
 
       <main className={styles.main}>
         <h1 onClick={randomNo}>btn</h1><br />
-        <h1 id="random_no">Random no is: </h1>
+        <h1 id="random_no"></h1>
       </main>
     </div>
   )
