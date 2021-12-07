@@ -26,6 +26,16 @@ jobs:
           for fun in test-fun-1 test-fun-2 ; do
             echo ${fun}
             cd ${fun}
+            
+            if [[ -f "package.json" ]]; then
+              echo "Installing packages"
+              npm i
+            fi
+
+            echo "Building Packages"
+            npx ncc build index.ts
+            
             dir
+
             cd ..
           done
