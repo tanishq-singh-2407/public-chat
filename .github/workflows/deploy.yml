@@ -9,7 +9,7 @@ jobs:
   variables:
     FUNCTIONS: test-fun-1 test-fun-2
 
-  Installing Packages:
+  Installing_Packages:
     name: 'Installing Packages'
     runs-on: ubuntu-latest
     environment: production
