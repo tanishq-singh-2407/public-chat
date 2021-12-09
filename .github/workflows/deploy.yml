@@ -30,28 +30,18 @@ jobs:
         run: |
           cd lambdas
           pwd
-          for fun in test-fun-1 test-fun-2 ; do
+          for fun in ws-aws ; do
             echo ${fun}
             cd ${fun}
-            
-            if [[ -f "package.json" ]]; then
-              echo "Installing packages"
-              npm i
-              
-              if [[ -f "index.ts" ]]; then
-                echo "Build Function"
-                npx ncc build index.ts -m -s
 
-                if [[ -d "dist" ]]; then
-                  echo "Creating Zip"
-                  zip -j deploy.zip ./dist/*
+            if [[ -f "index.js" ]]; then
+              echo "Creating Zip"
+              zip -j deploy.zip ./*
 
-                  echo "Deploying Lambda"
-                  aws lambda update-function-code --function-name=${fun} --zip-file=fileb://deploy.zip
+              echo "Deploying Lambda"
+              aws lambda update-function-code --function-name=${fun} --zip-file=fileb://deploy.zip
 
-                  echo "${fun} Deployed."
-                fi
-              fi
+              echo "${fun} Deployed."
             fi
 
             cd ..
