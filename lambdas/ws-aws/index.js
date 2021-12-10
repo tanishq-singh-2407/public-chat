@@ -20,7 +20,19 @@ exports.handler = async event => {
 
             case "publicMessage":
                 const connectionData = await dynamo.scan({ TableName: "ws-aws" }).promise();
-                await Promise.all(connectionData.Items.map(async ({ id }) => await sendMessage(id, JSON.parse(event.body).message)));
+                await Promise.all(
+                    connectionData.Items.map(
+                        async ({ id }) => {
+                            await sendMessage(
+                                id,
+                                JSON.stringify({
+                                    name: JSON.parse(event.body).name,
+                                    message: JSON.parse(event.body).message
+                                })
+                            );
+                        }
+                    )
+                );
                 break;
 
             default:

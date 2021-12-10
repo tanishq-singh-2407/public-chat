@@ -1,5 +1,5 @@
 .container {
-  background-color: #121212;
+  background-color: #070e0e;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -13,22 +13,46 @@
   align-items: center;
 }
 
-.h1 {
-  color: aliceblue;
-  font-weight: 400;
-  letter-spacing: 2px;
-  border-bottom: 1.5px solid #f8f8f8;
-  padding-left: 5px;
-  padding-right: 5px;
-  transition-duration: .5s;
-  cursor: pointer;
-  text-shadow: 0 0 8px #f8f8f8;
-  font-size: larger;
+.inputText {
+  height: 50px;
+  min-width: 280px;
+  max-width: 600px;
+  width: 80vw;
+  background-color: transparent;
+  border: 2px solid dimgray;
+  border-top-right-radius: 2px;
+  border-top-left-radius: 2px;
+  border-bottom: none;
+  color: #f8f8f8;
+  outline: none;
+  text-align: center;
+  font-size: large;
+  font-weight: 200;
+  font-family: 'JetBrains Mono', monospace;
 }
 
-.h1:hover {
-  color: thistle;
-  border-bottom: 1.5px solid thistle;
-  transition-duration: .5s;
-  text-shadow: 0 0 15px thistle;
+.inputText::placeholder {
+  font-size: large;
+  color: #f8f8f8;
+  text-align: center;
+}
+
+.submitBtn {
+  height: 50px;
+  min-width: 280px;
+  max-width: 600px;
+  width: 80vw;
+  background-color: transparent;
+  border: 2px solid dimgray;
+  border-bottom-right-radius: 2px;
+  border-bottom-left-radius: 2px;
+  border-radius: 2px;
+  color: #f8f8f8;
+  outline: none;
+  cursor: pointer;
+  font-size: large;
+  font-weight: 300;
+  font-style: italic;
+  letter-spacing: 1px;
+  font-family: 'JetBrains Mono', monospace;
 }

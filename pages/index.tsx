@@ -1,8 +1,24 @@
 import type { NextPage } from 'next';
 import Head from 'next/head';
 import styles from '../styles/Home.module.css';
+import { useState } from 'react';
+import { useRouter } from 'next/router';
 
 const Home: NextPage = () => {
+  const [name, setName] = useState<string>('');
+  const router = useRouter();
+
+  const letsGo = () => {
+    if (name.length < 3) return alert('Name Too Small.');
+
+    router.push({
+      pathname: '/chat',
+      query: {
+        name
+      }
+    });
+  };
+
   return (
     <div className={styles.container}>
       <Head>
@@ -12,10 +28,11 @@ const Home: NextPage = () => {
       </Head>
       <title>Home</title>
       <main className={styles.main}>
-        <h1 className={styles.h1}>KAJU 🥚</h1>
+        <input type="text" value={name} onChange={e => setName(e.target.value)} className={styles.inputText} placeholder="What's your name.?" autoComplete='off' />
+        <button type="submit" className={styles.submitBtn} onClick={letsGo}>SUBMIT</button>
       </main>
     </div>
   )
 }
 
-export default Home
+export default Home;
