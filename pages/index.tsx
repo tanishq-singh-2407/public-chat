@@ -9,6 +9,8 @@ const Home: NextPage = () => {
   const router = useRouter();
 
   const letsGo = () => {
+    console.log(name);
+
     if (name.length < 3) return alert('Name Too Small.');
 
     router.push({

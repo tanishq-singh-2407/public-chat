@@ -14,7 +14,8 @@ class Chat extends Component {
     };
 
     componentDidMount() {
-        const ws = new WebSocket(process.env.NEXT_PUBLIC_WS_ENDPOINT as string);
+        const url: any = process.env.NEXT_PUBLIC_WS_ENDPOINT;
+        const ws = new WebSocket(url);
         const name = new URLSearchParams(window.location.search).get('name');
         const button: HTMLButtonElement | any = document.getElementById('button');
         button.disabled = true;
