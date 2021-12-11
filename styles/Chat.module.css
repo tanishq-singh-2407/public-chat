@@ -1,21 +1,57 @@
-@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css");
-
-.container {
-  background-color: #121212;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
 .main {
-  min-height: 100vh;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
   align-items: center;
+	justify-content: center;
+  flex-direction: column;
+	height: 90vh;
+  width: 100vw;
+  background-image: url('../public/img/dots.webp');
 }
 
-.header {
+.chat_section {
+  height: 90vh;
+  width: 100vw;
+  color: #beb9a3;
+  font-family: 'JetBrains Mono', monospace;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.chats {
+  height: 75vh;
+  min-height: 75vh;
+  max-height: 75vh;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: column;
+  overflow: scroll;
+  overflow-x: hidden;
+  padding-top: 20px;
+}
+
+.one_message {
+  min-height: 70px;
+  width: 95vw;
+  margin-bottom: 50px;
+}
+
+.one_message_name {
+  margin-right: 20px;
+  padding: 10px;
+  background-color: #beb9a3;
+  color: #121212;
+  font-size: larger;
+  font-weight: 500;
+  font-style: italic;
+  text-decoration: underline #121212;
+  height: 100%;
+}
+
+.input_section {
   height: 10vh;
   width: 100vw;
   display: flex;
@@ -23,27 +59,55 @@
   justify-content: center;
 }
 
-.header_span {
-  font-weight: 600;
-  letter-spacing: 1px;
-  font-style: italic;
-  font-family: 'JetBrains Mono', monospace;
-  color: #f8f8f8;
-  border-bottom: 1px solid #f8f8f8;
-  padding: 10px;
+.text {
+  height: 100%;
+  width: 100%;
+  outline: none;
+  border: none;
+  background-color: transparent;
+  color: #beb9a3;
+  font-size: larger;
+  padding-left: 4vh;
 }
 
-.header_span:hover {
-  color: #ade4cb;
-  border-color: #ade4cb;
+.text::placeholder {
+  color: #beb9a3;
+  font-size: larger;
 }
 
-.header_span::selection {
-  background-color: teal;
+.submit {
+  height: 100%;
+  min-width: 15vh;
+  outline: none;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
 }
 
+#submit_icon {
+  color: #beb9a3;
+  font-size: x-large;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* 
 .chats {
-  height: 80vh;
+  height: 60vh;
   width: 100vw;
   max-height: 80vh;
   overflow-x: hidden;
@@ -86,7 +150,6 @@
 .message_text {
   min-height: 50px;
   width: 100%;
-  /* background-color: #85d8b341; */
   padding: 10px;
   display: flex;
   align-items: center;
@@ -152,4 +215,4 @@
   font-size: x-large;
   font-weight: bolder;
   color: #f8f8f8;
-}
+} */

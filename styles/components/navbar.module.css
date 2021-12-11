@@ -1,0 +1,45 @@
+.header {
+    height: 10vh;
+    width: 100vw;
+    background-image: url('../../public/img/dots.webp');
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #beb9a3;
+    font-family: 'JetBrains Mono', monospace;
+}
+
+.nav {
+    height: 100%;
+    width: 95%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #beb9a3;
+    font-family: 'JetBrains Mono', monospace;
+}
+
+.logo {
+    height: 100%;
+    width: 70%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    color: #beb9a3;
+    font-family: 'JetBrains Mono', monospace;
+}
+
+.span:hover {
+    cursor: pointer;
+    text-decoration: underline #beb9a3;
+}
+
+.name {
+    height: 100%;
+    width: 30%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    color: #beb9a3;
+    font-family: 'JetBrains Mono', monospace;
+}

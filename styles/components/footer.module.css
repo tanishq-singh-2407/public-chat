@@ -1,0 +1,18 @@
+.footer {
+    height: 10vh;
+    background-image: url('../../public/img/dots.webp');
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #beb9a3;
+    font-family: 'JetBrains Mono', monospace;
+}
+
+.span {
+    cursor: pointer;
+}
+
+.span:hover {
+    color: #beb9a3d7;
+    text-decoration: underline #beb9a3d7;
+}

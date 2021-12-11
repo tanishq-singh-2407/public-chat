@@ -1,58 +1,98 @@
-.container {
-  background-color: #121212;
-  display: flex;
-  justify-content: center;
+.main {
+	display: flex;
   align-items: center;
+	justify-content: center;
+	height: 80vh;
+  width: 100vw;
+  background-image: url('../public/img/dots.webp');
+  flex-direction: column;
 }
 
-.main {
-  min-height: 100vh;
+.form {
+  min-height: 125px;
+  max-width: 600px;
+  min-width: 250px;
+  width: 75vw;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.form_div {
+  height: 50%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.person_svg {
+  min-width: 62.5px;
+  height: calc(100% + 2px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #beb9a3;
+  border: 1px solid  #beb9a3;
+  font-size: larger;
 }
 
 .inputText {
-  height: 50px;
-  min-width: 280px;
-  max-width: 600px;
-  width: 80vw;
-  background-color: transparent;
-  border: 2px solid dimgray;
-  border-top-right-radius: 2px;
-  border-top-left-radius: 2px;
-  border-bottom: none;
-  color: #f8f8f8;
+  width: calc(100% - 62.5px);
+  height: 100%;
   outline: none;
-  text-align: center;
+  background-color: transparent;
+  color: #beb9a3;
+  border: 1px solid  #beb9a3;
+  border-left: none;
+  padding-right: 20px;
+  padding-left: 20px;
   font-size: large;
-  font-weight: 200;
+  font-weight: 300;
   font-family: 'JetBrains Mono', monospace;
+  text-transform: uppercase;
 }
 
 .inputText::placeholder {
   font-size: large;
-  color: #f8f8f8;
-  text-align: center;
+  color: #beb9a3;
+}
+
+.inputText::selection {
+  background-color: #c0bcab4d;
 }
 
 .submitBtn {
-  height: 50px;
-  min-width: 280px;
-  max-width: 600px;
-  width: 80vw;
-  background-color: transparent;
-  border: 2px solid dimgray;
-  border-bottom-right-radius: 2px;
-  border-bottom-left-radius: 2px;
-  border-radius: 2px;
-  color: #f8f8f8;
+  height: 62.5px;
+  width: 100%;
   outline: none;
-  cursor: pointer;
+  background-color: transparent;
+  color: #beb9a3;
+  border: 1px solid  #beb9a3;
   font-size: large;
-  font-weight: 300;
   font-style: italic;
-  letter-spacing: 1px;
+  font-weight: 400;
   font-family: 'JetBrains Mono', monospace;
+  cursor: pointer;
+  transition-duration: .5s;
+}
+
+.submitBtn:hover {
+  background-color: #c0bcab2d;
+}
+
+@media screen and (max-width: 400px) {
+  .inputText {
+    font-size: 15px;
+  }
+
+  .inputText::placeholder {
+    font-size: 15px;
+  }
+
+  .submitBtn{
+    font-size: 15px;
+  }
 }
